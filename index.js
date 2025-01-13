@@ -1,5 +1,5 @@
-import * as sideBar from "./sideBar.js";
 import * as titleBar from "./titleBar.js";
+import * as sideBar from "./sideBar.js";
 import * as switchSessions from "./switchSessions.js";
 
 const {
@@ -9,6 +9,11 @@ const {
   storage: { setToStorage, subscribeToStorageValue },
   events
 } = window.api;
+
+const cssModule = await import('./style.css', {
+  assert: { type: 'css' }
+});
+document.adoptedStyleSheets = [cssModule.default];
 
 subscribeToStorageValue(
   "session",
@@ -32,6 +37,6 @@ subscribeToStorageValue(
   { getInitialValue: true },
 );
 
-sideBar.render();
-titleBar.render();
+await titleBar.render();
+await sideBar.render();
 switchSessions.init();

@@ -1,0 +1,191 @@
+#titlebar {
+    background-color: color-mix(in srgb, var(--primary-bg) 55%, transparent);
+    height: 32px;
+    gap: 1.25rem;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.35rem;
+    border-bottom: var(--border);
+  }
+  
+  #title {
+    flex: 1;
+    padding: 0.4rem;
+    font-weight: bold;
+    user-select: none;
+    transition:
+      margin-left 150ms ease-out,
+      left 150ms ease-out;
+  }
+  
+  #title-bar-left-actions,
+  #title-bar-right-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    user-select: none;
+  }
+  
+  #title-bar-left-actions {
+    position: fixed;
+    left: 80px;
+    width: 164px;
+    justify-content: space-between;
+  }
+  
+  #title-bar-left-actions.no-sidebar {
+    width: 0;
+    transition: width 150ms ease-out;
+  }
+  
+  #title-bar-right-actions {
+    flex: 1;
+    justify-content: flex-end;
+  }
+  
+  #title.no-sidebar {
+    margin-left: 132px;
+  }
+  
+  #search-bar {
+    background-color: var(--overlay-bg);
+    min-width: 500px;
+    padding: 0.35rem;
+  }
+  
+  #search-bar.active {
+    z-index: 9999;
+    visibility: visible !important;
+  }
+  
+  #sessions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    padding-top: 40px;
+  }
+  
+  .session-list {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  
+  .session-list-item {
+    position: relative;
+    border-radius: 0.45rem;
+    background-color: transparent;
+    flex: 1;
+    min-height: 32px;
+    font-weight: bold;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .session-list-item.selected {
+    background-color: color-mix(
+      in srgb,
+      var(--accent-color) 15%,
+      transparent 100%
+    );
+    color: var(--accent-color);
+  }
+  
+  .session-list-item:hover {
+    background-color: var(--overlay-bg);
+  }
+  
+  .close-session {
+    display: none;
+  }
+  
+  .session-list-item:hover .close-session {
+    position: absolute;
+    display: block;
+    right: 0.75rem;
+  }
+  
+  #tabs {
+    height: 32px;
+    width: 100%;
+    display: flex;
+    border-bottom: var(--border);
+  }
+  
+  .tab {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: var(--border);
+    border-top: var(--border);
+    cursor: pointer;
+    font-size: 0.75rem;
+    background-color: color-mix(in srgb, var(--primary-bg) 85%, transparent);
+  }
+  
+  .tab:hover {
+    background-color: var(--overlay-bg);
+  }
+  
+  .tab:first-child {
+    border-left: none;
+  }
+  
+  .tab.active {
+    background-color: var(--title-bar-bg);
+    color: var(--accent-color);
+    font-weight: bold;
+    border-top: none;
+  }
+  
+  .close-button {
+    padding: 0.15rem !important;
+    background-color: transparent;
+  }
+  
+  .tab .close-button {
+    display: none;
+  }
+  
+  .tab:hover .close-button {
+    position: absolute;
+    left: 0.75rem;
+    display: block;
+  }
+  
+  .create-new-tab {
+    border-radius: 0;
+    flex: 0;
+  }
+  
+  #tabs {
+    height: 32px;
+    width: 100%;
+    display: flex;
+    border-bottom: var(--border);
+    background-color: var(--title-bar-bg);
+  }
+  
+  .tab {
+    flex: 0;
+    border-top: none;
+    border-left: none;
+    min-width: 200px;
+    background-color: transparent;
+  }
+  
+  .tab.active {
+    background-color: color-mix(in srgb, var(--accent-color) 25%, transparent);
+    color: var(--secondary-color);
+  }
+  
+  .session-list-item.selected {
+    border: var(--border);
+    border-color: var(--accent-color);
+  }
