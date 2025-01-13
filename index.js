@@ -1,6 +1,6 @@
 import * as sideBar from "./sideBar.js";
 import * as titleBar from "./titleBar.js";
-import * as sessionSwitcher from "./sessionSwitcher.js";
+import * as switchSessions from "./switchSessions.js";
 
 const {
   ipcRenderer,
@@ -34,4 +34,4 @@ subscribeToStorageValue(
 
 sideBar.render();
 titleBar.render();
-sessionSwitcher.init();
+switchSessions.init();
